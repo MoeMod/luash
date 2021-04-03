@@ -27,6 +27,7 @@ function luash_meta:CreateStructMetaTable(struct_name)
                     return result
                 end
             }
+            self.StructMetaTableCache[struct_name] = struct_meta
         end
     end
     return struct_meta
