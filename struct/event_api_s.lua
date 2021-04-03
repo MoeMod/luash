@@ -1,4 +1,4 @@
-event_api_t = {
+event_api_s = {
     version = 1,                    -- int
 	EV_PlaySound = 2,               -- void	( * ) ( int ent, float *origin, int channel, const char *sample, float volume, float attenuation, int fFlags, int pitch );
 	EV_StopSound = 3,               -- void	( * ) ( int ent, int channel, const char *sample );
@@ -22,5 +22,5 @@ event_api_t = {
 	EV_StopAllSounds = 21,          -- void	( * ) ( int entnum, int entchannel );
 	EV_KillEvents = 22,             -- void    ( * ) ( int entnum, const char *eventname );
 }
-event_api_s = event_api_t
-return event_api_t
+event_api_t = event_api_s
+return event_api_s

@@ -1,4 +1,4 @@
-entvars_t = {
+entvars_s = {
     classname           = 1,        -- string_t
     globalname          = 2,        -- string_t
     origin              = 3,        -- vec3_t
@@ -122,5 +122,5 @@ entvars_t = {
     euser3              = 121,      -- edict_t *
     euser4              = 122,      -- edict_t *
 }
-entvars_s = entvars_t
-return entvars_t
+entvars_t = entvars_s
+return entvars_s

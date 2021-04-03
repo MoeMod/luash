@@ -1,4 +1,4 @@
-event_args_t = {
+event_args_s = {
     flags = 1,
     entindex = 2,
     origin = 3,
@@ -12,5 +12,5 @@ event_args_t = {
     bparam1 = 11,
     bparam2 = 12,
 }
-event_args_s = event_args_t
-return event_args_t
+event_args_t = event_args_s
+return event_args_s

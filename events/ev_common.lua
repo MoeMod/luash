@@ -1,15 +1,12 @@
-
-local event_args_t = require("struct/event_args_t")
-
 local DEFAULT_VIEWHEIGHT = 28
 local VEC_DUCK_VIEW = 12
 
 function EV_GetGunPosition(args, out_pos, origin)
-    local idx = args[event_args_t.entindex]
+    local idx = args.entindex
     local view_ofs = { 0, 0, DEFAULT_VIEWHEIGHT }
     if EV_IsPlayer(idx) then
         view_ofs = EV_LocalPlayerViewheight()
-    elseif args[event_args_t.ducking] == 1 then
+    elseif args.ducking == 1 then
         view_ofs[3] = VEC_DUCK_VIEW
     end
 
@@ -18,11 +15,11 @@ function EV_GetGunPosition(args, out_pos, origin)
 end
 
 function EV_GetDefaultShellInfo(args, origin, velocity, out_ShellVelocity, out_ShellOrigin, forward, right, up, forwardScale, upScale, rightScale, bReverseDirection)
-    local idx = args[event_args_t.entindex]
+    local idx = args.entindex
     local view_ofs = { 0, 0, DEFAULT_VIEWHEIGHT }
     if EV_IsPlayer(idx) then
         view_ofs = EV_LocalPlayerViewheight()
-    elseif args[event_args_t.ducking] == 1 then
+    elseif args.ducking == 1 then
         view_ofs[3] = VEC_DUCK_VIEW
     end
 

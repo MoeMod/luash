@@ -21,16 +21,16 @@ local usp_e =  {
 }
 
 local function EV_FireUSP( args )
-    local silencer_on = args[event_args_t.bparam2] ~= 0
-	local empty = args[event_args_t.bparam1] == 0
-	local idx = args[event_args_t.entindex]
-	local origin = args[event_args_t.origin]
+    local silencer_on = args.bparam2 ~= 0
+	local empty = args.bparam1 == 0
+	local idx = args.entindex
+	local origin = args.origin
 	local angles = {
-		args[event_args_t.iparam1] / 100.0 + args[event_args_t.angles][1],
-		args[event_args_t.iparam2] / 100.0 + args[event_args_t.angles][2],
-		args[event_args_t.angles][3]
+		args.iparam1 / 100.0 + args.angles[1],
+		args.iparam2 / 100.0 + args.angles[2],
+		args.angles[3]
 	}
-	local velocity = args[event_args_t.velocity]
+	local velocity = args.velocity
 	local forward, right, up = AngleVectors(angles)
 
 	local ShellVelocity = {}
@@ -79,8 +79,10 @@ local function EV_FireUSP( args )
 	EV_GetGunPosition( args, vecSrc, origin )
 	local vecAiming = {}
 	VectorCopy(forward, vecAiming)
-	local vSpread = { args[event_args_t.fparam1], args[event_args_t.fparam2] }
+	local vSpread = { args.fparam1, args.fparam2 }
 	EV_HLDM_FireBullets( idx, forward, right, up, 1, vecSrc, vecAiming, vSpread, 8192.0, BULLET_PLAYER_45ACP, 2 )
+
+	print(tostring(args))
 end
 
 return EV_FireUSP
