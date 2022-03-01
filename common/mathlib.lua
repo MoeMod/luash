@@ -57,8 +57,12 @@ local function hypot(a, b, c)
     return math.sqrt(a * a + b * b + c * c)
 end
 
-function Length(vec)
+function VectorLength(vec)
     return hypot(vec[1], vec[2], vec[3])
+end
+
+function VectorLength2D(vec)
+    return hypot(vec[1], vec[2])
 end
 
 function VectorScale(a, scale, out)
